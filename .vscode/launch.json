@@ -9,6 +9,16 @@
             "mainClass": "org.vaadin.example.Application",
             "projectName": "spring-skeleton",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<spring-skeleton>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.utfpr.form.Application",
+            "projectName": "spring-skeleton",
+            "args": ""
         }
     ]
 }
