@@ -3,16 +3,11 @@ package br.utfpr.form;
 
 import java.time.LocalDate;
 
-import com.vaadin.flow.component.charts.model.Select;
-import com.vaadin.flow.component.charts.model.TextAlign;
-import com.vaadin.flow.component.charts.model.Title;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
-import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H4;
-import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
@@ -36,8 +31,8 @@ public class Form extends VerticalLayout{
 
         FormLayout formAddress = new FormLayout();
         H4 titleAddress = new H4("Endereço");
-        TextField textFieldAddress = new TextField("Endereço");
-        NumberField numberField = new NumberField("Número");
+        TextField textFieldAddress = new TextField("Rua");
+        TextField textFieldNumber = new TextField("Número");
         TextField textFieldCity = new TextField("Cidade");
         ComboBox<String> comboBoxStates = new ComboBox<>();
         comboBoxStates.setLabel("Estado");
@@ -48,7 +43,7 @@ public class Form extends VerticalLayout{
         formPerson.add(dataPickerBirthDate);
 
         formAddress.add(textFieldAddress);
-        formAddress.add(numberField);
+        formAddress.add(textFieldNumber);
         formAddress.add(textFieldCity);
         formAddress.add(comboBoxStates);
 
