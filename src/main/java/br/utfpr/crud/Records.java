@@ -12,7 +12,7 @@ public class Records extends VerticalLayout{
         Grid<Person> grid = new Grid<>(Person.class);
 
         grid.setItems(DataBase.getPersonList());
-        grid.setColumns("firstName", "lastName", "address");
+        grid.setColumns("firstName", "lastName", "email", "address", "buildingNumber");
 
         add(grid);
     }
