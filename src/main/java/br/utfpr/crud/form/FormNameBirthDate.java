@@ -1,6 +1,7 @@
 package br.utfpr.crud.form;
 
 import java.time.LocalDate;
+import java.util.Locale;
 
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -10,6 +11,11 @@ import com.vaadin.flow.component.textfield.TextField;
 
 public class FormNameBirthDate extends VerticalLayout{
     
+    
+    TextField firstName;
+    TextField lastName;
+    DatePicker birthDate;
+
     public FormNameBirthDate() {
 
         FormLayout formLayout = new FormLayout();
@@ -21,13 +27,16 @@ public class FormNameBirthDate extends VerticalLayout{
             new ResponsiveStep("700px", 3)
         );
 
-        TextField firstName = new TextField("Nome");
+        firstName = new TextField("Nome");
         firstName.setRequiredIndicatorVisible(true);
 
-        TextField lastName = new TextField("Sobrenome");
+        lastName = new TextField("Sobrenome");
         lastName.setRequiredIndicatorVisible(true);
 
-        DatePicker birthDate = new DatePicker("Data de Nascimento");
+        Locale brasilLocale = new Locale("pt", "BR");
+        birthDate = new DatePicker("Data de Nascimento");
+        birthDate.setLocale(brasilLocale);
+        birthDate.setHelperText("dd/mm/yyyy");
         birthDate.setRequiredIndicatorVisible(true);
         birthDate.setMax(LocalDate.now());
 
@@ -38,5 +47,17 @@ public class FormNameBirthDate extends VerticalLayout{
         );
 
         add(formLayout);
+    }
+
+    public TextField getFirstName() {
+        return firstName;
+    }
+
+    public TextField getLastName() {
+        return lastName;
+    }
+    
+    public DatePicker getBirthDate() {
+        return birthDate;
     }
 }

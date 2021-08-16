@@ -3,10 +3,13 @@ package br.utfpr.crud.form;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.formlayout.FormLayout.ResponsiveStep;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 
 public class FormAddress extends VerticalLayout{
+    
+    private TextField zipCode;
+    private TextField address;
+    private TextField number;
     
     public FormAddress() {
 
@@ -18,9 +21,9 @@ public class FormAddress extends VerticalLayout{
             new ResponsiveStep("700px", 3)
         );
 
-        TextField zipCode = new TextField("CEP");
-        TextField address = new TextField("Endereço");
-        NumberField number = new NumberField("Número");
+        zipCode = new TextField("CEP");
+        address = new TextField("Endereço");
+        number = new TextField("Número");
 
         zipCode.setRequiredIndicatorVisible(true);
         zipCode.setHelperText("apenas números");
@@ -36,5 +39,17 @@ public class FormAddress extends VerticalLayout{
         );
 
         add(formLayout);
+    }
+
+    public TextField getZipCode() {
+        return zipCode;
+    }
+
+    public TextField getAddress() {
+        return address;
+    }
+
+    public TextField getNumber() {
+        return number;
     }
 }

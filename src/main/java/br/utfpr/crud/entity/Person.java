@@ -1,14 +1,12 @@
 package br.utfpr.crud.entity;
 
-import java.time.LocalDate;
-
 public class Person {
     
     private String firstName;
     private String lastName;
-    private LocalDate birthDate;
+    private String birthDate;
     private String email;
-    private long phone;
+    private String phone;
     private long cep;
     private String address;
     private String buindingNumber;
@@ -30,9 +28,9 @@ public class Person {
 
     public Person (String firstName,
                    String lastName,
-                   LocalDate birthDate,
+                   String birthDate,
                    String email,
-                   long phone,
+                   String phone,
                    long cep,
                    String address,
                    String buindingNumber,
@@ -59,7 +57,7 @@ public class Person {
         return lastName;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
@@ -67,7 +65,7 @@ public class Person {
         return email;
     }
 
-    public long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -99,7 +97,7 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -107,7 +105,7 @@ public class Person {
         this.email = email;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

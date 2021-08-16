@@ -8,6 +8,9 @@ import com.vaadin.flow.component.textfield.TextArea;
 
 public class FormAbout extends VerticalLayout{
     
+    private ComboBox<String> levelOfEducation;
+    private TextArea about;
+
     public FormAbout() {
 
         FormLayout formLayout = new FormLayout();
@@ -18,7 +21,7 @@ public class FormAbout extends VerticalLayout{
             new ResponsiveStep("700px", 3)
         );
 
-        ComboBox<String> levelOfEducation = new ComboBox<>("Escolaridade");
+        levelOfEducation = new ComboBox<>("Escolaridade");
         levelOfEducation.setRequiredIndicatorVisible(true);
         levelOfEducation.setItems(
             "Nenhum",
@@ -28,7 +31,7 @@ public class FormAbout extends VerticalLayout{
             "Superior"
         );
 
-        TextArea about = new TextArea("Informações Adicionais");
+        about = new TextArea("Informações Adicionais");
         formLayout.setColspan(about, 3);
 
         formLayout.add(
@@ -37,5 +40,13 @@ public class FormAbout extends VerticalLayout{
         );
 
         add(formLayout);
+    }
+
+    public ComboBox<String> getLevelOfEducation() {
+        return levelOfEducation;
+    }
+
+    public TextArea getAbout() {
+        return about;
     }
 }

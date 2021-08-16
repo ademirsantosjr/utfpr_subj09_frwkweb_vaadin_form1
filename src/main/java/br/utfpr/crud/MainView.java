@@ -17,6 +17,7 @@ public class MainView extends VerticalLayout{
     
     public MainView() {
         this.getStyle().set("padding", "0");
+        
 
         MenuBar menuBar = new MenuBar();
         menuBar.getStyle().set("background", "#808080");

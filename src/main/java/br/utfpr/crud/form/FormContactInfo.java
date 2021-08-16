@@ -9,6 +9,10 @@ import com.vaadin.flow.component.textfield.TextField;
 
 public class FormContactInfo extends VerticalLayout{
     
+    private EmailField email;
+    private Checkbox doNotSendNotification;
+    private TextField phone;
+    
     public FormContactInfo() {
         FormLayout formLayout = new FormLayout();
         formLayout.getStyle().set("margin-top", "0");
@@ -18,17 +22,18 @@ public class FormContactInfo extends VerticalLayout{
             new ResponsiveStep("700px", 3)
         );
 
-        EmailField email = new EmailField("E-mail");
+        email = new EmailField("E-mail");
         email.setRequiredIndicatorVisible(true);
 
-        Checkbox doNotSentNotification = new Checkbox("Não quero receber e-mails de notificações");
-        doNotSentNotification.getStyle().set("color", "#808080");
-        doNotSentNotification.getStyle().set("font-size", "12px");
+        doNotSendNotification = new Checkbox("Não quero receber e-mails de notificações");
+        doNotSendNotification.getStyle().set("color", "#808080");
+        doNotSendNotification.getStyle().set("font-size", "12px");
 
         FormLayout emailContainer = new FormLayout();        
-        emailContainer.add(email, doNotSentNotification);
+        emailContainer.add(email, doNotSendNotification);
         
-        TextField phone = new TextField("Telefone");
+        phone = new TextField("Telefone");
+        phone.setHelperText("ex: +55 11 3322-4000");
 
         formLayout.add(
             emailContainer,
@@ -36,5 +41,17 @@ public class FormContactInfo extends VerticalLayout{
         );
         
         add(formLayout);
+    }
+
+    public EmailField getEmail() {
+        return email;
+    }
+
+    public Checkbox getDoNotSendNotification() {
+        return doNotSendNotification;
+    }
+
+    public TextField getPhone() {
+        return phone;
     }
 }

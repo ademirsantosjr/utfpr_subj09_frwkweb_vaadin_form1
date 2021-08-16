@@ -9,10 +9,26 @@ public class DataBase {
     
     private static List<Person> personList = new ArrayList<Person>(
         List.of(
-            new Person("Emília", "Almeida", "emilia@gmail.com", "Rua Barão", "585"),
-            new Person("João", "Miranda", "miranda@msn.com", "Av. Cascavel", "5A"),
-            new Person("Pedro", "Mathias", "pmatias@uol.com.br", "Rua São Mateus", "2"),
-            new Person("Ermengarda", "Pereira", "e.pereire@yahoo.com", "Av. das Avenidas", "47")
+            new Person("Emília",
+                       "Almeida",
+                       "25/06/1975",
+                       "emilia@gmail.com",
+                       "+55 41 3222-2222",
+                       25445258,
+                       "Rua Barão",
+                       "585",
+                       "Esino Médio",
+                       "Costureira"),
+            new Person("João",
+                       "Miranda",
+                       "01/01/2008",
+                       "miranda@msn.com",
+                       "+55 41 1234-2567",
+                       83000000,
+                       "Av. Cascavel",
+                       "5A",
+                       "Primário",
+                       "Estudante")            
         )
     );
 
